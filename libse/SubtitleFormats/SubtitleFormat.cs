@@ -24,6 +24,7 @@ namespace Nikse.SubtitleEdit.Core.SubtitleFormats
 
                 _allSubtitleFormats = new List<SubtitleFormat>
                 {
+                    new MeloJson2(),
                     new SubRip(),
                     new AbcIViewer(),
                     new AdobeAfterEffectsFTME(),

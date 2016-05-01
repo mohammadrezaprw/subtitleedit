@@ -232,6 +232,8 @@
     <Compile Include="SubtitleFormats\Eeg708.cs" />
     <Compile Include="SubtitleFormats\ELRStudioClosedCaption.cs" />
     <Compile Include="SubtitleFormats\F4Rtf.cs" />
+    <Compile Include="SubtitleFormats\MeloJson2.cs" />
+    <Compile Include="SubtitleFormats\MeloJson1.cs" />
     <Compile Include="SubtitleFormats\SeImageHtmlIndex.cs" />
     <Compile Include="SubtitleFormats\F4Text.cs" />
     <Compile Include="SubtitleFormats\F4Xml.cs" />

@@ -8287,6 +8287,20 @@ namespace Nikse.SubtitleEdit.Forms
             textBoxListViewText.TextChanged += TextBoxListViewTextTextChanged;
             _listViewTextUndoLast = p.Text;
 
+
+            //mlk changed
+            chbIsolateMean.CheckedChanged -= chbIsolateMean_CheckedChanged;
+            chbIsolateMean.Checked = p.IsolateMean;
+            chbIsolateMean.CheckedChanged += chbIsolateMean_CheckedChanged;
+
+            chbNewSection.CheckedChanged -= chbNewSection_CheckedChanged;
+            chbNewSection.Checked = p.IsNewSection;
+            chbNewSection.CheckedChanged += chbNewSection_CheckedChanged;
+
+            chbCanCloseLasts.CheckedChanged -= chbCanCloseLasts_CheckedChanged;
+            chbCanCloseLasts.Checked = p.CanCloseLasts;
+            chbCanCloseLasts.CheckedChanged += chbCanCloseLasts_CheckedChanged;
+            //mlk changed
             timeUpDownStartTime.MaskedTextBox.TextChanged -= MaskedTextBoxTextChanged;
             timeUpDownStartTime.TimeCode = p.StartTime;
             timeUpDownStartTime.MaskedTextBox.TextChanged += MaskedTextBoxTextChanged;
@@ -19834,5 +19848,34 @@ namespace Nikse.SubtitleEdit.Forms
             IsMenuOpen = false;
         }
 
+        private void chbIsolateMean_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_subtitleListViewIndex >= 0)
+            {
+                // update _subtitle + listview
+                bool isolateMean = chbIsolateMean.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].IsolateMean = isolateMean;                
+            }
+        }
+
+        private void chbNewSection_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_subtitleListViewIndex >= 0)
+            {
+                // update _subtitle + listview
+                bool newSection = chbNewSection.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].IsNewSection = newSection;
+            }
+        }
+
+        private void chbCanCloseLasts_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_subtitleListViewIndex >= 0)
+            {
+                // update _subtitle + listview
+                bool canCloseLasts = chbCanCloseLasts.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].CanCloseLasts = canCloseLasts;
+            }
+        }
     }
 }

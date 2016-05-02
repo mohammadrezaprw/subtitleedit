@@ -8289,17 +8289,25 @@ namespace Nikse.SubtitleEdit.Forms
 
 
             //mlk changed
+            chbNewParagraph.CheckedChanged -= chbNewParagraph_CheckedChanged;
+            chbNewParagraph.Checked = p.StartOfParagraph;
+            chbNewParagraph.CheckedChanged += chbNewParagraph_CheckedChanged;
+
+            chbNewStatement.CheckedChanged -= chbNewStatement_CheckedChanged;
+            chbNewStatement.Checked = p.StartOfStatement;
+            chbNewStatement.CheckedChanged += chbNewStatement_CheckedChanged;
+
             chbIsolateMean.CheckedChanged -= chbIsolateMean_CheckedChanged;
             chbIsolateMean.Checked = p.IsolateMean;
             chbIsolateMean.CheckedChanged += chbIsolateMean_CheckedChanged;
 
-            chbNewSection.CheckedChanged -= chbNewSection_CheckedChanged;
-            chbNewSection.Checked = p.IsNewSection;
-            chbNewSection.CheckedChanged += chbNewSection_CheckedChanged;
+            chbEndStatement.CheckedChanged -= chbEndStatement_CheckedChanged;
+            chbEndStatement.Checked = p.EndOfStatement;
+            chbEndStatement.CheckedChanged += chbEndStatement_CheckedChanged;
 
-            chbCanCloseLasts.CheckedChanged -= chbCanCloseLasts_CheckedChanged;
-            chbCanCloseLasts.Checked = p.CanCloseLasts;
-            chbCanCloseLasts.CheckedChanged += chbCanCloseLasts_CheckedChanged;
+            chbEndParagraph.CheckedChanged -= chbEndParagraph_CheckedChanged;
+            chbEndParagraph.Checked = p.EndOfParagraph;
+            chbEndParagraph.CheckedChanged += chbEndParagraph_CheckedChanged;
             //mlk changed
             timeUpDownStartTime.MaskedTextBox.TextChanged -= MaskedTextBoxTextChanged;
             timeUpDownStartTime.TimeCode = p.StartTime;
@@ -13210,7 +13218,7 @@ namespace Nikse.SubtitleEdit.Forms
                 {
                     if (audioVisualizer.Visible)
                     {
-                        audioVisualizer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
+                        //audioVisualizer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
                     }
                     else
                     {
@@ -13219,14 +13227,14 @@ namespace Nikse.SubtitleEdit.Forms
                 }
                 else if (audioVisualizer.Visible)
                 {
-                    audioVisualizer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
+                    //audioVisualizer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
                 }
-                audioVisualizer.Width = groupBoxVideo.Width - (audioVisualizer.Left + 10);
+                //audioVisualizer.Width = groupBoxVideo.Width - (audioVisualizer.Left + 10);
 
-                checkBoxSyncListViewWithVideoWhilePlaying.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
-                panelWaveformControls.Left = audioVisualizer.Left;
-                trackBarWaveformPosition.Left = panelWaveformControls.Left + panelWaveformControls.Width + 5;
-                trackBarWaveformPosition.Width = audioVisualizer.Left + audioVisualizer.Width - trackBarWaveformPosition.Left + 5;
+                //checkBoxSyncListViewWithVideoWhilePlaying.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
+                //panelWaveformControls.Left = audioVisualizer.Left;
+                //trackBarWaveformPosition.Left = panelWaveformControls.Left + panelWaveformControls.Width + 5;
+                //trackBarWaveformPosition.Width = audioVisualizer.Left + audioVisualizer.Width - trackBarWaveformPosition.Left + 5;
             }
 
             if (mediaPlayer.VideoPlayer == null && !string.IsNullOrEmpty(_fileName))
@@ -14176,18 +14184,18 @@ namespace Nikse.SubtitleEdit.Forms
             if (!_isVideoControlsUndocked)
             {
                 if (toolStripButtonToggleWaveform.Checked)
-                    audioVisualizer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
+                    //audioVisualizer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
                 if (!toolStripButtonToggleWaveform.Checked && toolStripButtonToggleVideo.Checked)
                 {
-                    panelVideoPlayer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
-                    panelVideoPlayer.Width = groupBoxVideo.Width - (panelVideoPlayer.Left + 10);
+                    //panelVideoPlayer.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
+                    //panelVideoPlayer.Width = groupBoxVideo.Width - (panelVideoPlayer.Left + 10);
                 }
 
-                audioVisualizer.Width = groupBoxVideo.Width - (audioVisualizer.Left + 10);
-                panelWaveformControls.Left = audioVisualizer.Left;
-                trackBarWaveformPosition.Left = panelWaveformControls.Left + panelWaveformControls.Width + 5;
-                trackBarWaveformPosition.Width = groupBoxVideo.Width - (trackBarWaveformPosition.Left + 10);
-                Main_Resize(null, null);
+                //audioVisualizer.Width = groupBoxVideo.Width - (audioVisualizer.Left + 10);
+                //panelWaveformControls.Left = audioVisualizer.Left;
+                //trackBarWaveformPosition.Left = panelWaveformControls.Left + panelWaveformControls.Width + 5;
+                //trackBarWaveformPosition.Width = groupBoxVideo.Width - (trackBarWaveformPosition.Left + 10);
+                //Main_Resize(null, null);
                 checkBoxSyncListViewWithVideoWhilePlaying.Left = tabControlButtons.Left + tabControlButtons.Width + 5;
                 if (!_loading)
                     Refresh();
@@ -19848,34 +19856,83 @@ namespace Nikse.SubtitleEdit.Forms
             IsMenuOpen = false;
         }
 
+        private void chbNewParagraph_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_subtitleListViewIndex >= 0)
+            {
+
+                // update _subtitle + listview
+                bool newParagraph = chbNewParagraph.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].StartOfParagraph = newParagraph;
+                
+            }
+        }
+
+        private void chbNewStatement_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_subtitleListViewIndex >= 0)
+            {
+
+                // update _subtitle + listview
+                bool newStatement = chbNewStatement.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].StartOfStatement = newStatement;
+
+            }
+        }
+
+
         private void chbIsolateMean_CheckedChanged(object sender, EventArgs e)
         {
             if (_subtitleListViewIndex >= 0)
             {
                 // update _subtitle + listview
                 bool isolateMean = chbIsolateMean.Checked;
-                _subtitle.Paragraphs[_subtitleListViewIndex].IsolateMean = isolateMean;                
+                _subtitle.Paragraphs[_subtitleListViewIndex].IsolateMean = isolateMean;
             }
         }
 
-        private void chbNewSection_CheckedChanged(object sender, EventArgs e)
+        private void chbEndStatement_CheckedChanged(object sender, EventArgs e)
         {
             if (_subtitleListViewIndex >= 0)
             {
+
                 // update _subtitle + listview
-                bool newSection = chbNewSection.Checked;
-                _subtitle.Paragraphs[_subtitleListViewIndex].IsNewSection = newSection;
+                bool endStatement = chbEndStatement.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].EndOfStatement = endStatement;
+
             }
         }
 
-        private void chbCanCloseLasts_CheckedChanged(object sender, EventArgs e)
+        private void chbEndParagraph_CheckedChanged(object sender, EventArgs e)
         {
             if (_subtitleListViewIndex >= 0)
             {
+
                 // update _subtitle + listview
-                bool canCloseLasts = chbCanCloseLasts.Checked;
-                _subtitle.Paragraphs[_subtitleListViewIndex].CanCloseLasts = canCloseLasts;
+                bool endParagraph = chbEndParagraph.Checked;
+                _subtitle.Paragraphs[_subtitleListViewIndex].EndOfParagraph = endParagraph;
+
             }
         }
+
+        //private void chbNewSection_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (_subtitleListViewIndex >= 0)
+        //    {
+        //        // update _subtitle + listview
+        //        bool newSection = chbNewParagraph.Checked;
+        //        _subtitle.Paragraphs[_subtitleListViewIndex].IsNewSection = newSection;
+        //    }
+        //}
+
+        //private void chbCanCloseLasts_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (_subtitleListViewIndex >= 0)
+        //    {
+        //        // update _subtitle + listview
+        //        bool canCloseLasts = chbCanCloseLasts.Checked;
+        //        _subtitle.Paragraphs[_subtitleListViewIndex].CanCloseLasts = canCloseLasts;
+        //    }
+        //}
     }
 }

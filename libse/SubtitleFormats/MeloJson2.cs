@@ -36,19 +36,25 @@ namespace Nikse.SubtitleEdit.Core.SubtitleFormats
             {
                 if (count > 0)
                     sb.Append(',');
-                sb.Append("{\"startMillis\":");
+                sb.Append("{\"start_millis\":");
                 sb.Append(p.StartTime.TotalMilliseconds.ToString(System.Globalization.CultureInfo.InvariantCulture));      
-                sb.Append(",\"endMillis\":");
+                sb.Append(",\"end_millis\":");
                 sb.Append(p.EndTime.TotalMilliseconds.ToString(System.Globalization.CultureInfo.InvariantCulture));
 
-                sb.Append(",\"isNewSection\":");
-                sb.Append(p.IsNewSection.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                sb.Append(",\"start_of_paragraph\":");
+                sb.Append(p.StartOfParagraph.ToString(System.Globalization.CultureInfo.InvariantCulture));
 
-                sb.Append(",\"isolateMean\":");
+                sb.Append(",\"start_of_statement\":");
+                sb.Append(p.StartOfStatement.ToString(System.Globalization.CultureInfo.InvariantCulture));
+
+                sb.Append(",\"isolate_mean\":");
                 sb.Append(p.IsolateMean.ToString(System.Globalization.CultureInfo.InvariantCulture));
 
-                sb.Append(",\"canCloseLasts\":");
-                sb.Append(p.CanCloseLasts.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                sb.Append(",\"end_of_statement\":");
+                sb.Append(p.EndOfStatement.ToString(System.Globalization.CultureInfo.InvariantCulture));
+
+                sb.Append(",\"end_of_paragraph\":");
+                sb.Append(p.EndOfParagraph.ToString(System.Globalization.CultureInfo.InvariantCulture));
 
 
                 sb.Append(",\"text\":\"");
@@ -73,8 +79,13 @@ namespace Nikse.SubtitleEdit.Core.SubtitleFormats
             foreach (string line in sb.ToString().Replace("},{", Environment.NewLine).SplitToLines())
             {
                 string s = line.Trim() + "}";
-                string start = Json.ReadTag(s, "startMillis");
-                string end = Json.ReadTag(s, "endMillis");
+                string start = Json.ReadTag(s, "start_millis");
+                string end = Json.ReadTag(s, "end_millis");
+                string start_of_paragraph = Json.ReadTag(s, "start_of_paragraph");
+                string start_of_statement = Json.ReadTag(s, "start_of_statement");
+                string isolate_mean = Json.ReadTag(s, "isolate_mean");
+                string end_of_statement = Json.ReadTag(s, "end_of_statement");
+                string end_of_paragraph = Json.ReadTag(s, "end_of_paragraph");
                 string text = Json.ReadTag(s, "text");
                 if (start != null && end != null && text != null)
                 {
@@ -83,7 +94,8 @@ namespace Nikse.SubtitleEdit.Core.SubtitleFormats
                     if (double.TryParse(start, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out startSeconds) &&
                         double.TryParse(end, System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out endSeconds))
                     {
-                        subtitle.Paragraphs.Add(new Paragraph(Json.DecodeJsonText(text), startSeconds, endSeconds));
+                        subtitle.Paragraphs.Add(new Paragraph(Json.DecodeJsonText(text), startSeconds, endSeconds,Convert.ToBoolean(start_of_paragraph), Convert.ToBoolean(start_of_statement)
+                            , Convert.ToBoolean(isolate_mean), Convert.ToBoolean(end_of_statement), Convert.ToBoolean(end_of_paragraph)));
                     }
                     else
                     {

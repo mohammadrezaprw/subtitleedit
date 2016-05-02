@@ -398,6 +398,23 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControlSubtitle = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.splitContainerListViewAndText = new System.Windows.Forms.SplitContainer();
+            this.groupBoxEdit = new System.Windows.Forms.GroupBox();
+            this.chbEndParagraph = new System.Windows.Forms.CheckBox();
+            this.chbNewStatement = new System.Windows.Forms.CheckBox();
+            this.chbEndStatement = new System.Windows.Forms.CheckBox();
+            this.chbNewParagraph = new System.Windows.Forms.CheckBox();
+            this.chbIsolateMean = new System.Windows.Forms.CheckBox();
+            this.labelSingleLine = new System.Windows.Forms.Label();
+            this.labelAlternateSingleLine = new System.Windows.Forms.Label();
+            this.labelDurationWarning = new System.Windows.Forms.Label();
+            this.labelStartTimeWarning = new System.Windows.Forms.Label();
+            this.buttonSplitLine = new System.Windows.Forms.Button();
+            this.labelAlternateCharactersPerSecond = new System.Windows.Forms.Label();
+            this.labelTextAlternateLineTotal = new System.Windows.Forms.Label();
+            this.labelTextAlternateLineLengths = new System.Windows.Forms.Label();
+            this.labelAlternateText = new System.Windows.Forms.Label();
+            this.labelText = new System.Windows.Forms.Label();
             this.contextMenuStripTextBoxListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemWebVttVoice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparatorWebVTT = new System.Windows.Forms.ToolStripSeparator();
@@ -426,29 +443,6 @@
             this.startOfRighttoleftOverrideRLOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.superscriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subscriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBoxSource = new System.Windows.Forms.TextBox();
-            this.panelVideoPlayer = new System.Windows.Forms.Panel();
-            this.contextMenuStripEmpty = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.insertLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageListPlayRate = new System.Windows.Forms.ImageList(this.components);
-            this.timerTextUndo = new System.Windows.Forms.Timer(this.components);
-            this.timerAlternateTextUndo = new System.Windows.Forms.Timer(this.components);
-            this.splitContainerListViewAndText = new System.Windows.Forms.SplitContainer();
-            this.groupBoxEdit = new System.Windows.Forms.GroupBox();
-            this.chbCanCloseLasts = new System.Windows.Forms.CheckBox();
-            this.chbNewSection = new System.Windows.Forms.CheckBox();
-            this.chbIsolateMean = new System.Windows.Forms.CheckBox();
-            this.labelSingleLine = new System.Windows.Forms.Label();
-            this.labelAlternateSingleLine = new System.Windows.Forms.Label();
-            this.labelDurationWarning = new System.Windows.Forms.Label();
-            this.labelStartTimeWarning = new System.Windows.Forms.Label();
-            this.buttonSplitLine = new System.Windows.Forms.Button();
-            this.labelAlternateCharactersPerSecond = new System.Windows.Forms.Label();
-            this.labelTextAlternateLineTotal = new System.Windows.Forms.Label();
-            this.labelTextAlternateLineLengths = new System.Windows.Forms.Label();
-            this.labelAlternateText = new System.Windows.Forms.Label();
-            this.labelText = new System.Windows.Forms.Label();
             this.buttonAutoBreak = new System.Windows.Forms.Button();
             this.labelTextLineLengths = new System.Windows.Forms.Label();
             this.labelTextLineTotal = new System.Windows.Forms.Label();
@@ -460,6 +454,14 @@
             this.labelStartTime = new System.Windows.Forms.Label();
             this.labelDuration = new System.Windows.Forms.Label();
             this.labelAutoDuration = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBoxSource = new System.Windows.Forms.TextBox();
+            this.panelVideoPlayer = new System.Windows.Forms.Panel();
+            this.contextMenuStripEmpty = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.insertLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageListPlayRate = new System.Windows.Forms.ImageList(this.components);
+            this.timerTextUndo = new System.Windows.Forms.Timer(this.components);
+            this.timerAlternateTextUndo = new System.Windows.Forms.Timer(this.components);
             this.SubtitleListview1 = new Nikse.SubtitleEdit.Controls.SubtitleListView();
             this.textBoxListViewTextAlternate = new Nikse.SubtitleEdit.Controls.SETextBox();
             this.timeUpDownStartTime = new Nikse.SubtitleEdit.Controls.TimeUpDown();
@@ -498,16 +500,16 @@
             this.splitContainer1.SuspendLayout();
             this.tabControlSubtitle.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.contextMenuStripTextBoxListView.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.panelVideoPlayer.SuspendLayout();
-            this.contextMenuStripEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListViewAndText)).BeginInit();
             this.splitContainerListViewAndText.Panel1.SuspendLayout();
             this.splitContainerListViewAndText.Panel2.SuspendLayout();
             this.splitContainerListViewAndText.SuspendLayout();
             this.groupBoxEdit.SuspendLayout();
+            this.contextMenuStripTextBoxListView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.panelVideoPlayer.SuspendLayout();
+            this.contextMenuStripEmpty.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -2685,19 +2687,20 @@
             this.trackBarWaveformPosition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBarWaveformPosition.AutoSize = false;
-            this.trackBarWaveformPosition.Location = new System.Drawing.Point(674, 267);
+            this.trackBarWaveformPosition.Location = new System.Drawing.Point(0, 249);
             this.trackBarWaveformPosition.Maximum = 1000;
             this.trackBarWaveformPosition.Name = "trackBarWaveformPosition";
-            this.trackBarWaveformPosition.Size = new System.Drawing.Size(297, 20);
+            this.trackBarWaveformPosition.Size = new System.Drawing.Size(968, 20);
             this.trackBarWaveformPosition.TabIndex = 11;
             this.trackBarWaveformPosition.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarWaveformPosition.ValueChanged += new System.EventHandler(this.trackBarWaveformPosition_ValueChanged);
             // 
             // panelWaveformControls
             // 
-            this.panelWaveformControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelWaveformControls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelWaveformControls.Controls.Add(this.toolStripWaveControls);
-            this.panelWaveformControls.Location = new System.Drawing.Point(474, 265);
+            this.panelWaveformControls.Location = new System.Drawing.Point(32, 265);
             this.panelWaveformControls.Name = "panelWaveformControls";
             this.panelWaveformControls.Size = new System.Drawing.Size(205, 30);
             this.panelWaveformControls.TabIndex = 10;
@@ -2837,10 +2840,10 @@
             this.tabControlButtons.Controls.Add(this.tabPageCreate);
             this.tabControlButtons.Controls.Add(this.tabPageAdjust);
             this.tabControlButtons.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControlButtons.Location = new System.Drawing.Point(6, 12);
+            this.tabControlButtons.Location = new System.Drawing.Point(129, 11);
             this.tabControlButtons.Name = "tabControlButtons";
             this.tabControlButtons.SelectedIndex = 0;
-            this.tabControlButtons.Size = new System.Drawing.Size(467, 283);
+            this.tabControlButtons.Size = new System.Drawing.Size(20, 283);
             this.tabControlButtons.TabIndex = 0;
             this.tabControlButtons.Visible = false;
             this.tabControlButtons.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControlButtonsDrawItem);
@@ -2859,7 +2862,7 @@
             this.tabPageTranslate.Location = new System.Drawing.Point(4, 22);
             this.tabPageTranslate.Name = "tabPageTranslate";
             this.tabPageTranslate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTranslate.Size = new System.Drawing.Size(459, 257);
+            this.tabPageTranslate.Size = new System.Drawing.Size(12, 257);
             this.tabPageTranslate.TabIndex = 0;
             this.tabPageTranslate.Text = "Translate";
             this.tabPageTranslate.UseVisualStyleBackColor = true;
@@ -3116,7 +3119,7 @@
             this.tabPageCreate.Location = new System.Drawing.Point(4, 22);
             this.tabPageCreate.Name = "tabPageCreate";
             this.tabPageCreate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCreate.Size = new System.Drawing.Size(459, 257);
+            this.tabPageCreate.Size = new System.Drawing.Size(12, 257);
             this.tabPageCreate.TabIndex = 1;
             this.tabPageCreate.Text = "Create";
             this.tabPageCreate.UseVisualStyleBackColor = true;
@@ -3342,7 +3345,7 @@
             this.tabPageAdjust.Controls.Add(this.timeUpDownVideoPositionAdjust);
             this.tabPageAdjust.Location = new System.Drawing.Point(4, 22);
             this.tabPageAdjust.Name = "tabPageAdjust";
-            this.tabPageAdjust.Size = new System.Drawing.Size(459, 257);
+            this.tabPageAdjust.Size = new System.Drawing.Size(12, 257);
             this.tabPageAdjust.TabIndex = 2;
             this.tabPageAdjust.Text = "Adjust";
             this.tabPageAdjust.UseVisualStyleBackColor = true;
@@ -3775,6 +3778,226 @@
             this.tabPage1.Text = "List view";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // splitContainerListViewAndText
+            // 
+            this.splitContainerListViewAndText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerListViewAndText.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerListViewAndText.Name = "splitContainerListViewAndText";
+            this.splitContainerListViewAndText.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerListViewAndText.Panel1
+            // 
+            this.splitContainerListViewAndText.Panel1.Controls.Add(this.SubtitleListview1);
+            this.splitContainerListViewAndText.Panel1MinSize = 50;
+            // 
+            // splitContainerListViewAndText.Panel2
+            // 
+            this.splitContainerListViewAndText.Panel2.Controls.Add(this.groupBoxEdit);
+            this.splitContainerListViewAndText.Panel2MinSize = 105;
+            this.splitContainerListViewAndText.Size = new System.Drawing.Size(648, 216);
+            this.splitContainerListViewAndText.SplitterDistance = 91;
+            this.splitContainerListViewAndText.TabIndex = 2;
+            // 
+            // groupBoxEdit
+            // 
+            this.groupBoxEdit.Controls.Add(this.chbEndParagraph);
+            this.groupBoxEdit.Controls.Add(this.chbNewStatement);
+            this.groupBoxEdit.Controls.Add(this.chbEndStatement);
+            this.groupBoxEdit.Controls.Add(this.chbNewParagraph);
+            this.groupBoxEdit.Controls.Add(this.chbIsolateMean);
+            this.groupBoxEdit.Controls.Add(this.labelSingleLine);
+            this.groupBoxEdit.Controls.Add(this.labelAlternateSingleLine);
+            this.groupBoxEdit.Controls.Add(this.labelDurationWarning);
+            this.groupBoxEdit.Controls.Add(this.labelStartTimeWarning);
+            this.groupBoxEdit.Controls.Add(this.buttonSplitLine);
+            this.groupBoxEdit.Controls.Add(this.labelAlternateCharactersPerSecond);
+            this.groupBoxEdit.Controls.Add(this.labelTextAlternateLineTotal);
+            this.groupBoxEdit.Controls.Add(this.labelTextAlternateLineLengths);
+            this.groupBoxEdit.Controls.Add(this.labelAlternateText);
+            this.groupBoxEdit.Controls.Add(this.labelText);
+            this.groupBoxEdit.Controls.Add(this.textBoxListViewTextAlternate);
+            this.groupBoxEdit.Controls.Add(this.buttonAutoBreak);
+            this.groupBoxEdit.Controls.Add(this.labelTextLineLengths);
+            this.groupBoxEdit.Controls.Add(this.labelTextLineTotal);
+            this.groupBoxEdit.Controls.Add(this.labelCharactersPerSecond);
+            this.groupBoxEdit.Controls.Add(this.buttonUnBreak);
+            this.groupBoxEdit.Controls.Add(this.timeUpDownStartTime);
+            this.groupBoxEdit.Controls.Add(this.numericUpDownDuration);
+            this.groupBoxEdit.Controls.Add(this.buttonPrevious);
+            this.groupBoxEdit.Controls.Add(this.buttonNext);
+            this.groupBoxEdit.Controls.Add(this.labelStartTime);
+            this.groupBoxEdit.Controls.Add(this.textBoxListViewText);
+            this.groupBoxEdit.Controls.Add(this.labelDuration);
+            this.groupBoxEdit.Controls.Add(this.labelAutoDuration);
+            this.groupBoxEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxEdit.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxEdit.Name = "groupBoxEdit";
+            this.groupBoxEdit.Size = new System.Drawing.Size(648, 121);
+            this.groupBoxEdit.TabIndex = 1;
+            this.groupBoxEdit.TabStop = false;
+            // 
+            // chbEndParagraph
+            // 
+            this.chbEndParagraph.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbEndParagraph.AutoSize = true;
+            this.chbEndParagraph.Location = new System.Drawing.Point(409, 81);
+            this.chbEndParagraph.Name = "chbEndParagraph";
+            this.chbEndParagraph.Size = new System.Drawing.Size(94, 17);
+            this.chbEndParagraph.TabIndex = 44;
+            this.chbEndParagraph.Text = "انتهای پاراگراف";
+            this.chbEndParagraph.UseVisualStyleBackColor = true;
+            this.chbEndParagraph.CheckedChanged += new System.EventHandler(this.chbEndParagraph_CheckedChanged);
+            // 
+            // chbNewStatement
+            // 
+            this.chbNewStatement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbNewStatement.AutoSize = true;
+            this.chbNewStatement.Location = new System.Drawing.Point(409, 28);
+            this.chbNewStatement.Name = "chbNewStatement";
+            this.chbNewStatement.Size = new System.Drawing.Size(75, 17);
+            this.chbNewStatement.TabIndex = 43;
+            this.chbNewStatement.Text = "جمله جدید";
+            this.chbNewStatement.UseVisualStyleBackColor = true;
+            this.chbNewStatement.CheckedChanged += new System.EventHandler(this.chbNewStatement_CheckedChanged);
+            // 
+            // chbEndStatement
+            // 
+            this.chbEndStatement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbEndStatement.AutoSize = true;
+            this.chbEndStatement.Location = new System.Drawing.Point(409, 63);
+            this.chbEndStatement.Name = "chbEndStatement";
+            this.chbEndStatement.Size = new System.Drawing.Size(72, 17);
+            this.chbEndStatement.TabIndex = 42;
+            this.chbEndStatement.Text = "پایان جمله";
+            this.chbEndStatement.UseVisualStyleBackColor = true;
+            this.chbEndStatement.CheckedChanged += new System.EventHandler(this.chbEndStatement_CheckedChanged);
+            // 
+            // chbNewParagraph
+            // 
+            this.chbNewParagraph.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbNewParagraph.AutoSize = true;
+            this.chbNewParagraph.Location = new System.Drawing.Point(410, 11);
+            this.chbNewParagraph.Name = "chbNewParagraph";
+            this.chbNewParagraph.Size = new System.Drawing.Size(93, 17);
+            this.chbNewParagraph.TabIndex = 41;
+            this.chbNewParagraph.Text = "شروع پاراگراف";
+            this.chbNewParagraph.UseVisualStyleBackColor = true;
+            this.chbNewParagraph.CheckedChanged += new System.EventHandler(this.chbNewParagraph_CheckedChanged);
+            // 
+            // chbIsolateMean
+            // 
+            this.chbIsolateMean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbIsolateMean.AutoSize = true;
+            this.chbIsolateMean.Location = new System.Drawing.Point(409, 46);
+            this.chbIsolateMean.Name = "chbIsolateMean";
+            this.chbIsolateMean.Size = new System.Drawing.Size(92, 17);
+            this.chbIsolateMean.TabIndex = 40;
+            this.chbIsolateMean.Text = "معنی مستقل";
+            this.chbIsolateMean.UseVisualStyleBackColor = true;
+            this.chbIsolateMean.CheckedChanged += new System.EventHandler(this.chbIsolateMean_CheckedChanged);
+            // 
+            // labelSingleLine
+            // 
+            this.labelSingleLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelSingleLine.AutoSize = true;
+            this.labelSingleLine.Location = new System.Drawing.Point(346, 94);
+            this.labelSingleLine.Name = "labelSingleLine";
+            this.labelSingleLine.Size = new System.Drawing.Size(76, 13);
+            this.labelSingleLine.TabIndex = 32;
+            this.labelSingleLine.Text = "labelSingleLine";
+            // 
+            // labelAlternateSingleLine
+            // 
+            this.labelAlternateSingleLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelAlternateSingleLine.AutoSize = true;
+            this.labelAlternateSingleLine.Location = new System.Drawing.Point(839, 94);
+            this.labelAlternateSingleLine.Name = "labelAlternateSingleLine";
+            this.labelAlternateSingleLine.Size = new System.Drawing.Size(47, 13);
+            this.labelAlternateSingleLine.TabIndex = 36;
+            this.labelAlternateSingleLine.Text = "AltSinLin";
+            // 
+            // labelDurationWarning
+            // 
+            this.labelDurationWarning.AutoSize = true;
+            this.labelDurationWarning.ForeColor = System.Drawing.Color.Red;
+            this.labelDurationWarning.Location = new System.Drawing.Point(123, 64);
+            this.labelDurationWarning.Name = "labelDurationWarning";
+            this.labelDurationWarning.Size = new System.Drawing.Size(110, 13);
+            this.labelDurationWarning.TabIndex = 17;
+            this.labelDurationWarning.Text = "labelDurationWarning";
+            // 
+            // labelStartTimeWarning
+            // 
+            this.labelStartTimeWarning.AutoSize = true;
+            this.labelStartTimeWarning.ForeColor = System.Drawing.Color.Red;
+            this.labelStartTimeWarning.Location = new System.Drawing.Point(9, 50);
+            this.labelStartTimeWarning.Name = "labelStartTimeWarning";
+            this.labelStartTimeWarning.Size = new System.Drawing.Size(115, 13);
+            this.labelStartTimeWarning.TabIndex = 18;
+            this.labelStartTimeWarning.Text = "labelStartTimeWarning";
+            // 
+            // buttonSplitLine
+            // 
+            this.buttonSplitLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSplitLine.ForeColor = System.Drawing.Color.Red;
+            this.buttonSplitLine.Location = new System.Drawing.Point(528, 81);
+            this.buttonSplitLine.Name = "buttonSplitLine";
+            this.buttonSplitLine.Size = new System.Drawing.Size(115, 21);
+            this.buttonSplitLine.TabIndex = 39;
+            this.buttonSplitLine.Text = "Split line";
+            this.buttonSplitLine.UseVisualStyleBackColor = true;
+            this.buttonSplitLine.Visible = false;
+            this.buttonSplitLine.Click += new System.EventHandler(this.ButtonSplitLineClick);
+            // 
+            // labelAlternateCharactersPerSecond
+            // 
+            this.labelAlternateCharactersPerSecond.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAlternateCharactersPerSecond.AutoSize = true;
+            this.labelAlternateCharactersPerSecond.Location = new System.Drawing.Point(560, 11);
+            this.labelAlternateCharactersPerSecond.Name = "labelAlternateCharactersPerSecond";
+            this.labelAlternateCharactersPerSecond.Size = new System.Drawing.Size(64, 13);
+            this.labelAlternateCharactersPerSecond.TabIndex = 38;
+            this.labelAlternateCharactersPerSecond.Text = "altCharsSec";
+            // 
+            // labelTextAlternateLineTotal
+            // 
+            this.labelTextAlternateLineTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTextAlternateLineTotal.AutoSize = true;
+            this.labelTextAlternateLineTotal.Location = new System.Drawing.Point(606, 101);
+            this.labelTextAlternateLineTotal.Name = "labelTextAlternateLineTotal";
+            this.labelTextAlternateLineTotal.Size = new System.Drawing.Size(36, 13);
+            this.labelTextAlternateLineTotal.TabIndex = 37;
+            this.labelTextAlternateLineTotal.Text = "AltTot";
+            // 
+            // labelTextAlternateLineLengths
+            // 
+            this.labelTextAlternateLineLengths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelTextAlternateLineLengths.AutoSize = true;
+            this.labelTextAlternateLineLengths.Location = new System.Drawing.Point(786, 94);
+            this.labelTextAlternateLineLengths.Name = "labelTextAlternateLineLengths";
+            this.labelTextAlternateLineLengths.Size = new System.Drawing.Size(56, 13);
+            this.labelTextAlternateLineLengths.TabIndex = 35;
+            this.labelTextAlternateLineLengths.Text = "AltLineLen";
+            // 
+            // labelAlternateText
+            // 
+            this.labelAlternateText.AutoSize = true;
+            this.labelAlternateText.Location = new System.Drawing.Point(803, 11);
+            this.labelAlternateText.Name = "labelAlternateText";
+            this.labelAlternateText.Size = new System.Drawing.Size(29, 13);
+            this.labelAlternateText.TabIndex = 34;
+            this.labelAlternateText.Text = "Text";
+            this.labelAlternateText.Visible = false;
+            // 
+            // labelText
+            // 
+            this.labelText.AutoSize = true;
+            this.labelText.Location = new System.Drawing.Point(239, 11);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(29, 13);
+            this.labelText.TabIndex = 5;
+            this.labelText.Text = "Text";
+            // 
             // contextMenuStripTextBoxListView
             // 
             this.contextMenuStripTextBoxListView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3995,274 +4218,6 @@
             this.subscriptToolStripMenuItem.Text = "Subscript";
             this.subscriptToolStripMenuItem.Click += new System.EventHandler(this.SubscriptToolStripMenuItemClick);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.textBoxSource);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(715, 222);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Source view";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSource
-            // 
-            this.textBoxSource.AllowDrop = true;
-            this.textBoxSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSource.HideSelection = false;
-            this.textBoxSource.Location = new System.Drawing.Point(3, 3);
-            this.textBoxSource.MaxLength = 0;
-            this.textBoxSource.Multiline = true;
-            this.textBoxSource.Name = "textBoxSource";
-            this.textBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSource.Size = new System.Drawing.Size(709, 216);
-            this.textBoxSource.TabIndex = 12;
-            this.textBoxSource.WordWrap = false;
-            this.textBoxSource.Click += new System.EventHandler(this.TextBoxSourceClick);
-            this.textBoxSource.TextChanged += new System.EventHandler(this.TextBoxSourceTextChanged);
-            this.textBoxSource.DragDrop += new System.Windows.Forms.DragEventHandler(this.TextBoxSourceDragDrop);
-            this.textBoxSource.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxSourceDragEnter);
-            this.textBoxSource.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSourceKeyDown);
-            this.textBoxSource.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSource_KeyUp);
-            this.textBoxSource.Leave += new System.EventHandler(this.TextBoxSourceLeave);
-            // 
-            // panelVideoPlayer
-            // 
-            this.panelVideoPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelVideoPlayer.Controls.Add(this.mediaPlayer);
-            this.panelVideoPlayer.Location = new System.Drawing.Point(1, 1);
-            this.panelVideoPlayer.Name = "panelVideoPlayer";
-            this.panelVideoPlayer.Size = new System.Drawing.Size(320, 246);
-            this.panelVideoPlayer.TabIndex = 5;
-            // 
-            // contextMenuStripEmpty
-            // 
-            this.contextMenuStripEmpty.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.insertLineToolStripMenuItem});
-            this.contextMenuStripEmpty.Name = "contextMenuStripEmpty";
-            this.contextMenuStripEmpty.Size = new System.Drawing.Size(126, 26);
-            // 
-            // insertLineToolStripMenuItem
-            // 
-            this.insertLineToolStripMenuItem.Name = "insertLineToolStripMenuItem";
-            this.insertLineToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.insertLineToolStripMenuItem.Text = "Insert line";
-            this.insertLineToolStripMenuItem.Click += new System.EventHandler(this.InsertLineToolStripMenuItemClick);
-            // 
-            // imageListPlayRate
-            // 
-            this.imageListPlayRate.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListPlayRate.ImageStream")));
-            this.imageListPlayRate.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListPlayRate.Images.SetKeyName(0, "FastForward.png");
-            this.imageListPlayRate.Images.SetKeyName(1, "FastForwardHighLight.png");
-            // 
-            // timerTextUndo
-            // 
-            this.timerTextUndo.Interval = 700;
-            this.timerTextUndo.Tick += new System.EventHandler(this.TimerTextUndoTick);
-            // 
-            // timerAlternateTextUndo
-            // 
-            this.timerAlternateTextUndo.Interval = 700;
-            this.timerAlternateTextUndo.Tick += new System.EventHandler(this.TimerAlternateTextUndoTick);
-            // 
-            // splitContainerListViewAndText
-            // 
-            this.splitContainerListViewAndText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerListViewAndText.Location = new System.Drawing.Point(3, 3);
-            this.splitContainerListViewAndText.Name = "splitContainerListViewAndText";
-            this.splitContainerListViewAndText.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainerListViewAndText.Panel1
-            // 
-            this.splitContainerListViewAndText.Panel1.Controls.Add(this.SubtitleListview1);
-            this.splitContainerListViewAndText.Panel1MinSize = 50;
-            // 
-            // splitContainerListViewAndText.Panel2
-            // 
-            this.splitContainerListViewAndText.Panel2.Controls.Add(this.groupBoxEdit);
-            this.splitContainerListViewAndText.Panel2MinSize = 105;
-            this.splitContainerListViewAndText.Size = new System.Drawing.Size(648, 216);
-            this.splitContainerListViewAndText.SplitterDistance = 91;
-            this.splitContainerListViewAndText.TabIndex = 2;
-            // 
-            // groupBoxEdit
-            // 
-            this.groupBoxEdit.Controls.Add(this.chbCanCloseLasts);
-            this.groupBoxEdit.Controls.Add(this.chbNewSection);
-            this.groupBoxEdit.Controls.Add(this.chbIsolateMean);
-            this.groupBoxEdit.Controls.Add(this.labelSingleLine);
-            this.groupBoxEdit.Controls.Add(this.labelAlternateSingleLine);
-            this.groupBoxEdit.Controls.Add(this.labelDurationWarning);
-            this.groupBoxEdit.Controls.Add(this.labelStartTimeWarning);
-            this.groupBoxEdit.Controls.Add(this.buttonSplitLine);
-            this.groupBoxEdit.Controls.Add(this.labelAlternateCharactersPerSecond);
-            this.groupBoxEdit.Controls.Add(this.labelTextAlternateLineTotal);
-            this.groupBoxEdit.Controls.Add(this.labelTextAlternateLineLengths);
-            this.groupBoxEdit.Controls.Add(this.labelAlternateText);
-            this.groupBoxEdit.Controls.Add(this.labelText);
-            this.groupBoxEdit.Controls.Add(this.textBoxListViewTextAlternate);
-            this.groupBoxEdit.Controls.Add(this.buttonAutoBreak);
-            this.groupBoxEdit.Controls.Add(this.labelTextLineLengths);
-            this.groupBoxEdit.Controls.Add(this.labelTextLineTotal);
-            this.groupBoxEdit.Controls.Add(this.labelCharactersPerSecond);
-            this.groupBoxEdit.Controls.Add(this.buttonUnBreak);
-            this.groupBoxEdit.Controls.Add(this.timeUpDownStartTime);
-            this.groupBoxEdit.Controls.Add(this.numericUpDownDuration);
-            this.groupBoxEdit.Controls.Add(this.buttonPrevious);
-            this.groupBoxEdit.Controls.Add(this.buttonNext);
-            this.groupBoxEdit.Controls.Add(this.labelStartTime);
-            this.groupBoxEdit.Controls.Add(this.textBoxListViewText);
-            this.groupBoxEdit.Controls.Add(this.labelDuration);
-            this.groupBoxEdit.Controls.Add(this.labelAutoDuration);
-            this.groupBoxEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxEdit.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxEdit.Name = "groupBoxEdit";
-            this.groupBoxEdit.Size = new System.Drawing.Size(648, 121);
-            this.groupBoxEdit.TabIndex = 1;
-            this.groupBoxEdit.TabStop = false;
-            // 
-            // chbCanCloseLasts
-            // 
-            this.chbCanCloseLasts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbCanCloseLasts.AutoSize = true;
-            this.chbCanCloseLasts.Location = new System.Drawing.Point(374, 46);
-            this.chbCanCloseLasts.Name = "chbCanCloseLasts";
-            this.chbCanCloseLasts.Size = new System.Drawing.Size(102, 17);
-            this.chbCanCloseLasts.TabIndex = 42;
-            this.chbCanCloseLasts.Text = "میتونه پایان باشه";
-            this.chbCanCloseLasts.UseVisualStyleBackColor = true;
-            this.chbCanCloseLasts.CheckedChanged += new System.EventHandler(this.chbCanCloseLasts_CheckedChanged);
-            // 
-            // chbNewSection
-            // 
-            this.chbNewSection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbNewSection.AutoSize = true;
-            this.chbNewSection.Location = new System.Drawing.Point(374, 27);
-            this.chbNewSection.Name = "chbNewSection";
-            this.chbNewSection.Size = new System.Drawing.Size(88, 17);
-            this.chbNewSection.TabIndex = 41;
-            this.chbNewSection.Text = "سکشن جدید";
-            this.chbNewSection.UseVisualStyleBackColor = true;
-            this.chbNewSection.CheckedChanged += new System.EventHandler(this.chbNewSection_CheckedChanged);
-            // 
-            // chbIsolateMean
-            // 
-            this.chbIsolateMean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbIsolateMean.AutoSize = true;
-            this.chbIsolateMean.Location = new System.Drawing.Point(374, 63);
-            this.chbIsolateMean.Name = "chbIsolateMean";
-            this.chbIsolateMean.Size = new System.Drawing.Size(92, 17);
-            this.chbIsolateMean.TabIndex = 40;
-            this.chbIsolateMean.Text = "معنی مستقل";
-            this.chbIsolateMean.UseVisualStyleBackColor = true;
-            this.chbIsolateMean.CheckedChanged += new System.EventHandler(this.chbIsolateMean_CheckedChanged);
-            // 
-            // labelSingleLine
-            // 
-            this.labelSingleLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelSingleLine.AutoSize = true;
-            this.labelSingleLine.Location = new System.Drawing.Point(346, 94);
-            this.labelSingleLine.Name = "labelSingleLine";
-            this.labelSingleLine.Size = new System.Drawing.Size(76, 13);
-            this.labelSingleLine.TabIndex = 32;
-            this.labelSingleLine.Text = "labelSingleLine";
-            // 
-            // labelAlternateSingleLine
-            // 
-            this.labelAlternateSingleLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelAlternateSingleLine.AutoSize = true;
-            this.labelAlternateSingleLine.Location = new System.Drawing.Point(839, 94);
-            this.labelAlternateSingleLine.Name = "labelAlternateSingleLine";
-            this.labelAlternateSingleLine.Size = new System.Drawing.Size(47, 13);
-            this.labelAlternateSingleLine.TabIndex = 36;
-            this.labelAlternateSingleLine.Text = "AltSinLin";
-            // 
-            // labelDurationWarning
-            // 
-            this.labelDurationWarning.AutoSize = true;
-            this.labelDurationWarning.ForeColor = System.Drawing.Color.Red;
-            this.labelDurationWarning.Location = new System.Drawing.Point(123, 64);
-            this.labelDurationWarning.Name = "labelDurationWarning";
-            this.labelDurationWarning.Size = new System.Drawing.Size(110, 13);
-            this.labelDurationWarning.TabIndex = 17;
-            this.labelDurationWarning.Text = "labelDurationWarning";
-            // 
-            // labelStartTimeWarning
-            // 
-            this.labelStartTimeWarning.AutoSize = true;
-            this.labelStartTimeWarning.ForeColor = System.Drawing.Color.Red;
-            this.labelStartTimeWarning.Location = new System.Drawing.Point(9, 50);
-            this.labelStartTimeWarning.Name = "labelStartTimeWarning";
-            this.labelStartTimeWarning.Size = new System.Drawing.Size(115, 13);
-            this.labelStartTimeWarning.TabIndex = 18;
-            this.labelStartTimeWarning.Text = "labelStartTimeWarning";
-            // 
-            // buttonSplitLine
-            // 
-            this.buttonSplitLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSplitLine.ForeColor = System.Drawing.Color.Red;
-            this.buttonSplitLine.Location = new System.Drawing.Point(528, 81);
-            this.buttonSplitLine.Name = "buttonSplitLine";
-            this.buttonSplitLine.Size = new System.Drawing.Size(115, 21);
-            this.buttonSplitLine.TabIndex = 39;
-            this.buttonSplitLine.Text = "Split line";
-            this.buttonSplitLine.UseVisualStyleBackColor = true;
-            this.buttonSplitLine.Visible = false;
-            this.buttonSplitLine.Click += new System.EventHandler(this.ButtonSplitLineClick);
-            // 
-            // labelAlternateCharactersPerSecond
-            // 
-            this.labelAlternateCharactersPerSecond.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAlternateCharactersPerSecond.AutoSize = true;
-            this.labelAlternateCharactersPerSecond.Location = new System.Drawing.Point(560, 11);
-            this.labelAlternateCharactersPerSecond.Name = "labelAlternateCharactersPerSecond";
-            this.labelAlternateCharactersPerSecond.Size = new System.Drawing.Size(64, 13);
-            this.labelAlternateCharactersPerSecond.TabIndex = 38;
-            this.labelAlternateCharactersPerSecond.Text = "altCharsSec";
-            // 
-            // labelTextAlternateLineTotal
-            // 
-            this.labelTextAlternateLineTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTextAlternateLineTotal.AutoSize = true;
-            this.labelTextAlternateLineTotal.Location = new System.Drawing.Point(606, 101);
-            this.labelTextAlternateLineTotal.Name = "labelTextAlternateLineTotal";
-            this.labelTextAlternateLineTotal.Size = new System.Drawing.Size(36, 13);
-            this.labelTextAlternateLineTotal.TabIndex = 37;
-            this.labelTextAlternateLineTotal.Text = "AltTot";
-            // 
-            // labelTextAlternateLineLengths
-            // 
-            this.labelTextAlternateLineLengths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelTextAlternateLineLengths.AutoSize = true;
-            this.labelTextAlternateLineLengths.Location = new System.Drawing.Point(786, 94);
-            this.labelTextAlternateLineLengths.Name = "labelTextAlternateLineLengths";
-            this.labelTextAlternateLineLengths.Size = new System.Drawing.Size(56, 13);
-            this.labelTextAlternateLineLengths.TabIndex = 35;
-            this.labelTextAlternateLineLengths.Text = "AltLineLen";
-            // 
-            // labelAlternateText
-            // 
-            this.labelAlternateText.AutoSize = true;
-            this.labelAlternateText.Location = new System.Drawing.Point(803, 11);
-            this.labelAlternateText.Name = "labelAlternateText";
-            this.labelAlternateText.Size = new System.Drawing.Size(29, 13);
-            this.labelAlternateText.TabIndex = 34;
-            this.labelAlternateText.Text = "Text";
-            this.labelAlternateText.Visible = false;
-            // 
-            // labelText
-            // 
-            this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(239, 11);
-            this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(29, 13);
-            this.labelText.TabIndex = 5;
-            this.labelText.Text = "Text";
-            // 
             // buttonAutoBreak
             // 
             this.buttonAutoBreak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -4386,6 +4341,80 @@
             this.labelAutoDuration.TabIndex = 30;
             this.labelAutoDuration.Text = "Auto";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.textBoxSource);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(654, 222);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Source view";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSource
+            // 
+            this.textBoxSource.AllowDrop = true;
+            this.textBoxSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSource.HideSelection = false;
+            this.textBoxSource.Location = new System.Drawing.Point(3, 3);
+            this.textBoxSource.MaxLength = 0;
+            this.textBoxSource.Multiline = true;
+            this.textBoxSource.Name = "textBoxSource";
+            this.textBoxSource.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSource.Size = new System.Drawing.Size(648, 216);
+            this.textBoxSource.TabIndex = 12;
+            this.textBoxSource.WordWrap = false;
+            this.textBoxSource.Click += new System.EventHandler(this.TextBoxSourceClick);
+            this.textBoxSource.TextChanged += new System.EventHandler(this.TextBoxSourceTextChanged);
+            this.textBoxSource.DragDrop += new System.Windows.Forms.DragEventHandler(this.TextBoxSourceDragDrop);
+            this.textBoxSource.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxSourceDragEnter);
+            this.textBoxSource.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSourceKeyDown);
+            this.textBoxSource.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSource_KeyUp);
+            this.textBoxSource.Leave += new System.EventHandler(this.TextBoxSourceLeave);
+            // 
+            // panelVideoPlayer
+            // 
+            this.panelVideoPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelVideoPlayer.Controls.Add(this.mediaPlayer);
+            this.panelVideoPlayer.Location = new System.Drawing.Point(1, 1);
+            this.panelVideoPlayer.Name = "panelVideoPlayer";
+            this.panelVideoPlayer.Size = new System.Drawing.Size(320, 246);
+            this.panelVideoPlayer.TabIndex = 5;
+            // 
+            // contextMenuStripEmpty
+            // 
+            this.contextMenuStripEmpty.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertLineToolStripMenuItem});
+            this.contextMenuStripEmpty.Name = "contextMenuStripEmpty";
+            this.contextMenuStripEmpty.Size = new System.Drawing.Size(126, 26);
+            // 
+            // insertLineToolStripMenuItem
+            // 
+            this.insertLineToolStripMenuItem.Name = "insertLineToolStripMenuItem";
+            this.insertLineToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.insertLineToolStripMenuItem.Text = "Insert line";
+            this.insertLineToolStripMenuItem.Click += new System.EventHandler(this.InsertLineToolStripMenuItemClick);
+            // 
+            // imageListPlayRate
+            // 
+            this.imageListPlayRate.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListPlayRate.ImageStream")));
+            this.imageListPlayRate.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListPlayRate.Images.SetKeyName(0, "FastForward.png");
+            this.imageListPlayRate.Images.SetKeyName(1, "FastForwardHighLight.png");
+            // 
+            // timerTextUndo
+            // 
+            this.timerTextUndo.Interval = 700;
+            this.timerTextUndo.Tick += new System.EventHandler(this.TimerTextUndoTick);
+            // 
+            // timerAlternateTextUndo
+            // 
+            this.timerAlternateTextUndo.Interval = 700;
+            this.timerAlternateTextUndo.Tick += new System.EventHandler(this.TimerAlternateTextUndoTick);
+            // 
             // SubtitleListview1
             // 
             this.SubtitleListview1.AllowDrop = true;
@@ -4501,14 +4530,13 @@
             this.audioVisualizer.AllowDrop = true;
             this.audioVisualizer.AllowNewSelection = true;
             this.audioVisualizer.AllowOverlap = false;
-            this.audioVisualizer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.audioVisualizer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.audioVisualizer.BackColor = System.Drawing.Color.Black;
             this.audioVisualizer.BackgroundColor = System.Drawing.Color.Black;
             this.audioVisualizer.Color = System.Drawing.Color.GreenYellow;
             this.audioVisualizer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(18)))));
-            this.audioVisualizer.Location = new System.Drawing.Point(472, 32);
+            this.audioVisualizer.Location = new System.Drawing.Point(7, 14);
             this.audioVisualizer.Margin = new System.Windows.Forms.Padding(0);
             this.audioVisualizer.Name = "audioVisualizer";
             this.audioVisualizer.NewSelectionParagraph = null;
@@ -4518,7 +4546,7 @@
             this.audioVisualizer.ShowGridLines = true;
             this.audioVisualizer.ShowSpectrogram = false;
             this.audioVisualizer.ShowWaveform = true;
-            this.audioVisualizer.Size = new System.Drawing.Size(499, 229);
+            this.audioVisualizer.Size = new System.Drawing.Size(968, 161);
             this.audioVisualizer.StartPositionSeconds = 0D;
             this.audioVisualizer.TabIndex = 6;
             this.audioVisualizer.TextBold = true;
@@ -4617,18 +4645,18 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControlSubtitle.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.contextMenuStripTextBoxListView.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.panelVideoPlayer.ResumeLayout(false);
-            this.contextMenuStripEmpty.ResumeLayout(false);
             this.splitContainerListViewAndText.Panel1.ResumeLayout(false);
             this.splitContainerListViewAndText.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerListViewAndText)).EndInit();
             this.splitContainerListViewAndText.ResumeLayout(false);
             this.groupBoxEdit.ResumeLayout(false);
             this.groupBoxEdit.PerformLayout();
+            this.contextMenuStripTextBoxListView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDuration)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.panelVideoPlayer.ResumeLayout(false);
+            this.contextMenuStripEmpty.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5065,7 +5093,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExportAyato;
         private Controls.AudioVisualizer audioVisualizer;
         private System.Windows.Forms.CheckBox chbIsolateMean;
-        private System.Windows.Forms.CheckBox chbNewSection;
-        private System.Windows.Forms.CheckBox chbCanCloseLasts;
+        private System.Windows.Forms.CheckBox chbNewParagraph;
+        private System.Windows.Forms.CheckBox chbEndStatement;
+        private System.Windows.Forms.CheckBox chbNewStatement;
+        private System.Windows.Forms.CheckBox chbEndParagraph;
     }
 }

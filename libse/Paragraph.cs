@@ -54,17 +54,14 @@ namespace Nikse.SubtitleEdit.Core
         }
 
         //mlk changes
+        public bool StartOfParagraph { get; set; }
+        public bool StartOfStatement { get; set; }
         public bool IsolateMean { get; set; }
-        public bool IsNewSection { get; set; }
-        public bool CanCloseLasts { get; set; }
+        public bool EndOfStatement { get; set; }
+        public bool EndOfParagraph { get; set; }
         //mlk changes
         public Paragraph()
         {
-            //mlk changes
-            IsolateMean = false;
-            IsNewSection = false;
-            CanCloseLasts = false;
-            //mlk changes
 
             StartTime = TimeCode.FromSeconds(0);
             EndTime = TimeCode.FromSeconds(0);
@@ -72,17 +69,12 @@ namespace Nikse.SubtitleEdit.Core
             ID = GenerateId();
         }
 
-        public Paragraph(TimeCode startTime, TimeCode endTime, string text,bool isolateMean=false,bool isNewSection=false,bool canCloseLasts=false)
+        public Paragraph(TimeCode startTime, TimeCode endTime, string text)
         {
             StartTime = startTime;
             EndTime = endTime;
             Text = text;
 
-            //mlkchanges
-            IsolateMean = isolateMean;
-            IsNewSection = isNewSection;
-            CanCloseLasts = canCloseLasts;
-            //mlk changes
 
             ID = GenerateId();
         }
@@ -110,41 +102,38 @@ namespace Nikse.SubtitleEdit.Core
             NewSection = paragraph.NewSection;
 
             //mlkchanges
+            StartOfParagraph = paragraph.StartOfParagraph;
+            StartOfStatement = paragraph.StartOfStatement;
             IsolateMean = paragraph.IsolateMean;
-            IsNewSection = paragraph.IsNewSection;
-            CanCloseLasts = paragraph.CanCloseLasts;
+            EndOfStatement = paragraph.EndOfStatement;
+            EndOfParagraph = paragraph.EndOfParagraph;
             //mlk changes
         }
 
-        public Paragraph(int startFrame, int endFrame, string text, bool isolateMean=false, bool isNewSection=false, bool canCloseLasts=false)
+        public Paragraph(int startFrame, int endFrame, string text)
         {
             StartTime = new TimeCode(0, 0, 0, 0);
             EndTime = new TimeCode(0, 0, 0, 0);
             StartFrame = startFrame;
             EndFrame = endFrame;
-            Text = text;
-
-            //mlkchanges
-            IsolateMean = isolateMean;
-            IsNewSection = isNewSection;
-            CanCloseLasts = canCloseLasts;
-            //mlk changes
-
+            Text = text;        
             ID = GenerateId();
         }
 
-        public Paragraph(string text, double startTotalMilliseconds, double endTotalMilliseconds, bool isolateMean=false, bool isNewSection=false, bool canCloseLasts=false)
+        public Paragraph(string text, double startTotalMilliseconds, double endTotalMilliseconds,bool start_of_paragraph =false,bool start_of_statement =false,bool isolate_mean = false, bool end_of_statement=false,bool end_of_paragraph=false)
         {
             StartTime = new TimeCode(startTotalMilliseconds);
             EndTime = new TimeCode(endTotalMilliseconds);
-            Text = text;
 
-            //mlkchanges
-            IsolateMean = isolateMean;
-            IsNewSection = isNewSection;
-            CanCloseLasts = canCloseLasts;
+            //mlk changes
+            StartOfParagraph = start_of_paragraph;
+            StartOfStatement = start_of_statement;
+            IsolateMean = isolate_mean;
+            EndOfStatement = end_of_statement;
+            EndOfParagraph = end_of_paragraph;
             //mlk changes
 
+            Text = text;
             ID = GenerateId();
         }
 

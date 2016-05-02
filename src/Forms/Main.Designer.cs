@@ -3840,7 +3840,7 @@
             // 
             this.chbEndParagraph.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbEndParagraph.AutoSize = true;
-            this.chbEndParagraph.Location = new System.Drawing.Point(409, 81);
+            this.chbEndParagraph.Location = new System.Drawing.Point(409, 96);
             this.chbEndParagraph.Name = "chbEndParagraph";
             this.chbEndParagraph.Size = new System.Drawing.Size(94, 17);
             this.chbEndParagraph.TabIndex = 44;
@@ -3852,7 +3852,7 @@
             // 
             this.chbNewStatement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbNewStatement.AutoSize = true;
-            this.chbNewStatement.Location = new System.Drawing.Point(409, 28);
+            this.chbNewStatement.Location = new System.Drawing.Point(409, 43);
             this.chbNewStatement.Name = "chbNewStatement";
             this.chbNewStatement.Size = new System.Drawing.Size(75, 17);
             this.chbNewStatement.TabIndex = 43;
@@ -3864,7 +3864,7 @@
             // 
             this.chbEndStatement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbEndStatement.AutoSize = true;
-            this.chbEndStatement.Location = new System.Drawing.Point(409, 63);
+            this.chbEndStatement.Location = new System.Drawing.Point(409, 78);
             this.chbEndStatement.Name = "chbEndStatement";
             this.chbEndStatement.Size = new System.Drawing.Size(72, 17);
             this.chbEndStatement.TabIndex = 42;
@@ -3876,7 +3876,7 @@
             // 
             this.chbNewParagraph.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbNewParagraph.AutoSize = true;
-            this.chbNewParagraph.Location = new System.Drawing.Point(410, 11);
+            this.chbNewParagraph.Location = new System.Drawing.Point(410, 26);
             this.chbNewParagraph.Name = "chbNewParagraph";
             this.chbNewParagraph.Size = new System.Drawing.Size(93, 17);
             this.chbNewParagraph.TabIndex = 41;
@@ -3888,7 +3888,7 @@
             // 
             this.chbIsolateMean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chbIsolateMean.AutoSize = true;
-            this.chbIsolateMean.Location = new System.Drawing.Point(409, 46);
+            this.chbIsolateMean.Location = new System.Drawing.Point(409, 61);
             this.chbIsolateMean.Name = "chbIsolateMean";
             this.chbIsolateMean.Size = new System.Drawing.Size(92, 17);
             this.chbIsolateMean.TabIndex = 40;
